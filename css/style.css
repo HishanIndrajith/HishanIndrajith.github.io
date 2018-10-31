@@ -11,6 +11,9 @@
 
 body {
   background: #ffffff;
+  background-image: url("engineering.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #898989;
   font-family: 'Poppins', helvetica;
   font-size: 15px;
@@ -290,7 +293,8 @@ nav ul li a {
 #about {
   width: 100%;
   height: auto;
-  background: #f7f7f7;
+  /*background: #f7f7f7;*/
+  background:transparent;
   padding-top: 190px;
 }
 
