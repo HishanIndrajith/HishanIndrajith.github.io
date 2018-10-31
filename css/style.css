@@ -10,8 +10,8 @@
 /*-----------------------------------------------------------------------------------*/
 
 body {
-  background: #ffffff;
-  background-image: url("engineering.jpg");
+  /*background: #000000;*/
+  background-image: url("images/engineering.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #898989;
