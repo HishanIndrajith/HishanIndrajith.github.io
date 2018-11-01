@@ -11,8 +11,9 @@
 
 body {
   /*background: #000000;*/
-  background-image: url("images/engineering.jpg");
+  background-image: url("../images/engineering.jpg");
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   background-attachment: fixed;
   color: #898989;
   font-family: 'Poppins', helvetica;
@@ -293,7 +294,6 @@ nav ul li a {
 #about {
   width: 100%;
   height: auto;
-  /*background: #f7f7f7;*/
   background:transparent;
   padding-top: 190px;
 }
@@ -313,7 +313,9 @@ nav ul li a {
 }
 
 #about .about-descr .p-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #ffffff;
   font-size: 28px;
   text-align: left;
 }
@@ -331,6 +333,7 @@ nav ul li a {
 #services {
   background: #f7f7f7;
   position: relative;
+  padding-top: 80px;
   padding-bottom: 80px;
 }
 
