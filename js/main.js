@@ -79,7 +79,7 @@ $(document).ready(function() {
 
   $(function() {
     typed.typed({
-      strings: ["Hishan Indrajith.", "Computer Engineering Undergraduate.", "Software Designer.", "Programmer.", "Mobile Application Developer"],
+      strings: ["Hishan Indrajith.", "Computer Engineering UG.", "University of Peradeniya UG.", "Full Stack Developer."],
       typeSpeed: 50,
       loop: true,
     });
