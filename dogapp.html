@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Folio - Blog Grid</title>
+  <title>Networked and Automated Weather Monitoring and Alerting System</title>
   <meta content="" name="keywords">
-  <meta content="" name="description">
+  <meta content="Networked and Automated Weather Monitoring and Alerting System" name="description">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
@@ -34,12 +34,6 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/favicon.png">
 
-  <!-- =======================================================
-    Theme Name: Folio
-    Theme URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
 </head>
 
 <body>
@@ -56,161 +50,180 @@
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 
         <ul class="nav-menu list-unstyled">
-          <li><a href="#homee" class="smoothScroll">Home</a></li>
+          <li><a href="https://hishan.me" class="smoothScroll">Home</a></li>
           <li><a href="#about" class="smoothScroll">About</a></li>
           <li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
           <li><a href="#blog" class="smoothScroll">Blog</a></li>
           <li><a href="#contact" class="smoothScroll">Contact</a></li>
         </ul>
-
       </div>
     </div>
   </nav>
   <!-- End section navbar -->
-
-  <!-- start section journal -->
-  <div id="journal-blog" class="text-left  paddsections">
-
+  <!-- start section main content -->
+  <div class="main-content paddsection">
     <div class="container">
-      <div class="section-title text-center">
-        <h2>journal</h2>
-      </div>
-    </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+            <div class="container-main single-main">
+              <div class="col-md-12">
+                <div class="block-main mb-30">
+                  <div class="content-main single-post padDiv">
+                    <div class="post-meta">
+                      <ul class="list-unstyled mb-0">
+                        <li class="author">Written by:<a>Hishan Indrajith</a></li>
+                        <li class="date">date:<a>June 2, 2018</a></li>
+                      </ul>
+                      </br>
+                    </div>
+                    <div class="journal-txt">
+                      <h4><a>Dogapp – Development of Dog counting and locating App for Dog population control</a></h4>
+                    </div>
+                    <kbd>JNov 2017 – Jan 2018</kbd></br></br>
+                    <kbd>Group Project</kbd></br></br>
+                    <ul class="nav list-unstyled">
+                        <li><kbd style="background-color: #0e4b87;">Java</kbd></li>
+                        <li><kbd style="background-color: #0e4b87;">Android</kbd></li>
+                        <li><kbd style="background-color: #0e4b87;">MySQL</kbd></li>
+                        <li><kbd style="background-color: #0e4b87;">PHP</kbd></li>
+                        <li><kbd style="background-color: #0e4b87;">Ajile Method</kbd></li>
+                    </ul></br>
+                    <a href = "https://github.com/HishanIndrajith/dogapp" ><span><i data-icon="m" class="ion-social-github"></i></span> Gihub Repository</a>
+                    
+                    <blockquote>My Contribution was developing and designing the backend server and the android app using android studio.</blockquote>
+                    <h3>Project Decription</h3>
+                    <p class="mb-30">
+                    Problem: We don’t have a good estimate of the dog population in Sri Lanka. Having accurate count of dog in Streets is mandatory for population control strategies. Furthermore stray dogs in Sri Lanka comprise of dogs owned dogs, community dogs and without owners. Estimating these groups are also required for dog population control work. Concept: Is to Develop an Application to be used for dog counting where both dogs living in house and in streets can be reported. Task: To develop an application that can be used in mobile devices that have features to report and record information of dogs and their closes location with GPS coordinate information. Client: Dr Eranda Rajapaksha (BVSc, MS, PhD, DACVB, DACAW) Senior Lecturer, Department of Veterinary Clinical Science, Faculty of Veterinary Medicine and Animal Science, University of Peradeniya,</p>
+                    </br>
+                    <h3>Project Decription</h3>
+                    <p class="mb-30">
+                   We developed the mobile application for only android platform. We used android studio to 
+                    develop and java and xml was the languages we used. As according to statistics, majority of 
+                    mobile phone users of Sri Lanka use android phones other than other platfor
+                    ms. So the 
+                    platform we choose was android. Also easiness in developing in android was also a reason.    
+                    The flow of the operation when a user add a dog was made and the software was developed 
+                    accordingly.</p>
+                    <ol>
+                      <li>User starts the app.</li>
+                      <li>Click to get location - GPS location is received.</li>
+                      <li>Click to take a photo using camera or gallery.</li>
+                      <li>Choose colors of the dog from list</li>
+                      <li>Choose whether the dog is stray or not.</li>
+                      <li>Choose whether the dog is a puppy or not.</li>
+                      <li>Click to submit - photo uploading finishes</li>
+                      <li>User get suggestions of close dogs around the location submitted with their images and three options to choose saying that the dog is same dog, may be and not same. (The suggestions are the dogs in database with location inside 1km x 1km square with current location at center)</li>
+                      <li>User responds to suggestions.</li>
+                      <li>Dog adding process finishes and a thanking screen is shown.</li>
+                    </ol></br>
+                    <h3>Implementation</h3>
+                    <p class="mb-30">
+                    Location is needed with a good accuracy for a dog to be inserted. So we had to use only GPS 
+                    provider to get location. But it take few much time for first GPS location fix to arrive.
+                    Network provider provide location based on towers quickly than GPS, but
+                    not accurate. As 
+                    we need accuracy much we used GPS for the location provider. </p>
+                    <p class="mb-30">But when the GPS listener is on, there is a high battery drain. To avoid that we start the 
+                    listener, listen for a fixed number of location fixes, get the most accurate out of t
+                    hose and 
+                    close the listener.</p>
+                    <p class="mb-30">GPS locations are followed by an accuracy in meters. It is radial type one. That says that a 
+                    circle around the location with radius equal to accuracy in meters will have the real position 
+                    inside the circle and the probability o
+                    f having it there is 68%.</p>
+                    <p class="mb-30">Also it was implemented to sign up to the service using the app for any user. He must 
+                  provide user name, email and enter a password submit. Then the server will send an email 
+                  to the 
+                  user with a
+                  verification code, The app will ask 
+                  for it and once you provide it you are 
+                  registered and suitable to contribute. </p>
+                    <p class="mb-30">User can log in
+                    once and the user details are 
+                    kept in shared preferences and unless he 
+                    logout he needs not log in again when opening the app. That means logged
+                    -
+                    in feature is 
+                    ava
+                    ilable in the app. </p>
+                    <p class="mb-30">User can add a photo using either camera or gallery. User must choose color of dog out of 
+                    colors white, brown, black and gray.
+                    Also few other details. (Stray/not, puppy/not)</p>
 
-    <div class="container">
-      <div class="journal-block">
-        <div class="row">
+                  <p class="mb-30">Another important feature is suggestions. It reduces the risk 
+                  of having duplicate dogs added 
+                  to system. (only reduce, not prevent)</p>
+                  <p class="mb-30">The mobile app has been made to be a user friendly one. Nice colors and shapes. </p>
+                  <p class="mb-30">Front end web app is to be used by administrators to view results. It shows dog counts in 
+                  different
+                  ,111.11
+                  categories and also total dogs can be viewed in a map.
+                  </p>
+                  <p class="mb-30">The 
+                  assumption related to GPS coordinates and distances is 111,111.11 m is equal to 1 
+                  degree latitude, and 111,111.111 cos (latitude) is equal to 1 degree longitude. This was 
+                  needed when getting suggestions because the suggestions are chosen from a square of 1
+                  km 
+                  side, around the location of added dog. Also it check whether the color code matches and 
+                  details of dog matches. </p>
+                  <h5>Results</h5></br>
+                  <p class="mb-30">Following is the 
+                  logging screen of the app
+                  , signup screen and verify screen</p>
+                  <div class="col-lg-10  col-md-10 col-sm-12">
+                                <img src="images/blog/dogapp/1.jpg" class="img-responsive" style="max-width: 100%" alt="test result">
+                  </div></br>
+                  <p class="mb-30">Following is the navigation bar and contribute main screen</p>
+                  <div class="col-lg-10  col-md-10 col-sm-12">
+                                <img src="images/blog/dogapp/2.jpg" class="img-responsive" style="max-width: 100%" alt="test result">
+                  </div></br>
+                  <p class="mb-30">Following is adding image, details and suggestion screen</p>
+                  <div class="col-lg-10  col-md-10 col-sm-12">
+                                <img src="images/blog/dogapp/3.jpg" class="img-responsive" style="max-width: 100%" alt="test result">
+                  </div></br>
+                  <p class="mb-30">Following is Thanks activity and user profile</p>
+                  <div class="col-lg-10  col-md-10 col-sm-12">
+                                <img src="images/blog/dogapp/4.jpg" class="img-responsive" style="max-width: 100%" alt="test result">
+                  </div></br>
+                  <p class="mb-30">The accuracy of the GPS location was between 7.5 m and 3.9 m as checked from Sony 
+                  Experia E4g</p>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
 
-              <a href="blog-single.html"><img src="images/blog-post-1.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">SO LETS MAKE THE MOST IS BEAUTIFUL</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
+                    <h5>Downloads</h5></br>
+                      <a href="images/blog/dogapp/report.pdf"  target="_blank" class="btn btn-info" role="button">Project Report</a>
+                    </br>
+                  </div>
+                </div>
               </div>
-
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">WE'RE GONA MAKE DREAMS COMES</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">NEW LIFE CIVILIZATIONS TO BOLDLY</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-1.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">SO LETS MAKE THE MOST IS BEAUTIFUL</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">WE'RE GONA MAKE DREAMS COMES</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">NEW LIFE CIVILIZATIONS TO BOLDLY</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </div>
-  <!-- End section journal -->
-
+  <!--  </div> -->
+  <!-- start section main content -->
 
   <!-- start section footer -->
-  <div id="footer" class="text-center">
+   <div id="footer" class="text-center">
     <div class="container">
       <div class="socials-media text-center">
 
         <ul class="list-unstyled">
-          <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-          <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-          <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-          <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-          <li><a href="#"><i class="ion-social-tumblr"></i></a></li>
-          <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+          <li><a href="https://www.facebook.com/hishan.indrajith" target="_blank"><i class="ion-social-facebook"></i></a></li>
+          <li><a href="https://twitter.com/Hishan95hia" target="_blank"><i class="ion-social-twitter"></i></a></li>
+          <li><a href="https://github.com/HishanIndrajith" target="_blank"><i class="ion-social-github"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/hishan-indrajith/" target="_blank"><i class="ion-social-linkedin"></i></a></li>
+          <li><a href="https://plus.google.com/u/0/110708347902399084724" target="_blank"><i class="ion-social-googleplus"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UC1_VbbA1w7IavuFvlFxm99A" target="_blank"><i class="ion-social-youtube"></i></a></li>
         </ul>
 
       </div>
 
-      <p>&copy; Copyrights Folio. All rights reserved.</p>
+      <p>&copy; 2018 . Hishan Indrajith Adikari . All rights reserved.</p>
 
-      <div class="credits">
-        <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Folio
-        -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+      
 
     </div>
   </div>
