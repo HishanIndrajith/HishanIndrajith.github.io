@@ -2,5 +2,6 @@ User-Agent: *
 Disallow: 
 Allow: /sitemap.xml
 Allow: /index.html
+Allow: /resume.pdf
 
 Sitemap: https://hishan.me/sitemap.xml
