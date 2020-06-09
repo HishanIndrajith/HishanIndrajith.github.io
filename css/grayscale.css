@@ -375,6 +375,7 @@ body, input, select, textarea {
 #mainNav {
   min-height: 56px;
   background-color: #fff;
+  width: 100vw;
 }
 
 #mainNav .navbar-toggler {
