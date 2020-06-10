@@ -41,6 +41,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+            </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#education">Education</a>
           </li>
@@ -96,42 +99,47 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
+          <img src="img/me-circle.png" alt="" class="rounded-circle b-shadow-a img-fluid">
           <h2 class="text-white mb-4">Hello, I'm</h2>
           <p class="text-white lead">an enthusiastic and energetic computer engineering undergraduate, with a logical mind with a practical approach to problem-solving and a drive to see things through to completion. I am eager to be challenged in order to grow and further improve my IT skills.
             I am currently following Bsc Engineering degree specialized in computer engineering at Faculty of Engineering, University of Peradeniya.</p>
           <a href="resume.pdf"  target="_blank" role="button" class="btn btn-lg btn-info"><span class="glyphicon glyphicon-download-alt"></span> Download my Resume</a>
         </div>
       </div>
-      <img src="img/ipad.png" class="img-fluid" alt="">
+
     </div>
   </section>
 
+  <!--/ Section experience/-->
+  <div id="experience">
+      <div class="testimonials paralax-mf bg-image" style="background-image: url(img/bg-codegen.jpg)">
+          <div class="overlay-mf"></div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div id="scroll-anime3" class="testimonial-box">
+                          <div class="author-test">
+                              <img src="img/codegen.png" alt="" class="b-shadow-a img-fluid">
+                              <span class="author">CodeGen International (Pvt) Ltd</span>
+                          </div>
+                          <div class="content-test">
+                              <p class="text-white lead">
+                                  was the place where I got my first work experience, as I worked there as a trainee software engineer for 6 months. Click below to see my experience there.
+                              </p>
+                              <span class="comit"><i class="fa fa-quote-right"></i></span>
+                              <br>
+                              <a href="internship.html" target="_blank" class="btn btn-primary js-scroll-trigger">my internship experience<i class="fas fa-angle-double-right"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
 
   <!--/ Section Education/-->
   <div id="education">
-    <div class="testimonials paralax-mf bg-image" style="background-image: url(img/bg-cck.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div id="scroll-anime1" class="testimonial-box">
-              <div class="author-test">
-                <img src="img/cck.png" alt="" class="rounded-circle b-shadow-a img-fluid">
-                <span class="author">Central College Kuliyapitiya</span>
-              </div>
-              <div class="content-test">
-                <p class="text-white lead">
-                  was the alma mater where I got my secondary education including GCE Adavnced Level in Mathematics stream (English Medium). After sitting for the Advanced
-                  Level examination (year 2014) I got selected to Faculty of Engineering, University of Peradeniya in my first attempt.
-                </p>
-                <span class="comit"><i class="fa fa-quote-right"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div  class="testimonials paralax-mf bg-image" style="background-image: url(img/bg-efac.jpg)">
       <div class="overlay-mf"></div>
       <div class="container">
@@ -153,6 +161,28 @@
         </div>
       </div>
     </div>
+      <div class="testimonials paralax-mf bg-image" style="background-image: url(img/bg-cck.jpg)">
+          <div class="overlay-mf"></div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div id="scroll-anime1" class="testimonial-box">
+                          <div class="author-test">
+                              <img src="img/cck.png" alt="" class="rounded-circle b-shadow-a img-fluid">
+                              <span class="author">Central College Kuliyapitiya</span>
+                          </div>
+                          <div class="content-test">
+                              <p class="text-white lead">
+                                  was the alma mater where I got my secondary education including GCE Adavnced Level in Mathematics stream (English Medium). After sitting for the Advanced
+                                  Level examination (year 2014) I got selected to Faculty of Engineering, University of Peradeniya in my first attempt.
+                              </p>
+                              <span class="comit"><i class="fa fa-quote-right"></i></span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
 
   <!-- start section courses learnt -->
@@ -243,7 +273,7 @@
         <div class="col-lg-12">
 
           <header class="section-header">
-            <h3 class="section-title">My Portfolio</h3>
+            <h3 class="section-title">My Projects</h3>
           </header>
           <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active">All</li>
@@ -256,13 +286,28 @@
             <li data-filter=".filter-embed">Embedded</li>
             <li data-filter=".filter-and">Android</li>
             <li data-filter=".filter-php">PHP</li>
+            <li data-filter=".filter-algo">Algorithm</li>
+            <li data-filter=".filter-js">Java Script</li>
           </ul>
         </div>
       </div>
 
       <div class="row portfolio-container">
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web filter-embed filter-embed wow fadeInUp">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web filter-python filter-js filter-algo wow fadeInUp">
+          <div class="portfolio-wrap">
+            <figure>
+              <img src="img/portfolio/7.jpg" class="img-fluid" alt="">
+              <a href="ipb.html" target="_blank" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h6><a href="ipb.html" target="_blank">Automating IPB</a></h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web filter-embed filter-js wow fadeInUp">
           <div class="portfolio-wrap">
             <figure>
               <img src="img/portfolio/1.jpg" class="img-fluid" alt="">
@@ -289,7 +334,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-image filter-python wow fadeInUp" data-wow-delay="0.2s">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-image filter-python filter-algo wow fadeInUp" data-wow-delay="0.2s">
           <div class="portfolio-wrap">
             <figure>
               <img src="img/portfolio/3.jpg" class="img-fluid" alt="">
@@ -303,7 +348,21 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-java filter-php filter-web filter-oop wow fadeInUp">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-oop filter-python filter-image filter-algo wow fadeInUp" data-wow-delay="0.2s">
+              <div class="portfolio-wrap">
+                  <figure>
+                      <img src="img/portfolio/8.jpg" class="img-fluid" alt="">
+                      <a href="img/portfolio/8.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                      <a href="portrait-creater.html" target="_blank" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                  </figure>
+
+                  <div class="portfolio-info">
+                      <h6><a href="portrait-creater.html" target="_blank">APPC PERA</a></h6>
+                  </div>
+              </div>
+          </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-java filter-php filter-web filter-js filter-oop wow fadeInUp">
           <div class="portfolio-wrap">
             <figure>
               <img src="img/portfolio/4.jpg" class="img-fluid" alt="">
@@ -316,6 +375,20 @@
             </div>
           </div>
         </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-oop filter-java wow fadeInUp" data-wow-delay="0.2s">
+              <div class="portfolio-wrap">
+                  <figure>
+                      <img src="img/portfolio/6.jpg" class="img-fluid" alt="">
+                      <a href="img/portfolio/6.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                      <a href="auctionsystem.html" target="_blank" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                  </figure>
+
+                  <div class="portfolio-info">
+                      <h6><a href="auctionsystem.html" target="_blank">Auction System</a></h6>
+                  </div>
+              </div>
+          </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-java filter-and filter-fire wow fadeInUp" data-wow-delay="0.1s">
           <div class="portfolio-wrap">
@@ -331,19 +404,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-oop filter-java wow fadeInUp" data-wow-delay="0.2s">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="img/portfolio/6.jpg" class="img-fluid" alt="">
-              <a href="img/portfolio/6.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="auctionsystem.html" target="_blank" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
 
-            <div class="portfolio-info">
-              <h6><a href="auctionsystem.html" target="_blank">Auction System</a></h6>
-            </div>
-          </div>
-        </div>
 
 
       </div>
