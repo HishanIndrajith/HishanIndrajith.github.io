@@ -1829,3 +1829,67 @@ journal image hover code
         bottom: 15px;
     }
 }
+
+
+/*body animation*/
+
+body {
+    -moz-animation: body 1s 2s forwards;
+    -webkit-animation: body 1s 2s forwards;
+    -ms-animation: body 1s 2s forwards;
+    animation: body 1s 2s forwards;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+}
+
+@-moz-keyframes body {
+    0% {
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        overflow-y: visible;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes body {
+    0% {
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        overflow-y: visible;
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes body {
+    0% {
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        overflow-y: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes body {
+    0% {
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        overflow-y: visible;
+        opacity: 1;
+    }
+}
