@@ -89,6 +89,11 @@
                                         Frontend Improvement.
                                     </blockquote>
 
+                                    <a href="img/blog/ipb/report.pdf" target="_blank" class="btn btn-info"
+                                       role="button">Download Project Report With Full Details</a>
+                                    <br>
+                                    <br>
+
                                     <h3>Abstarct</h3>
                                     <p>
                                         In military operations armed forces have to get a better idea of the area in
@@ -1199,7 +1204,41 @@ function scan(restricted_grid, cell, directions, is_diagonal):
                                         <h4>Risk evaluation of corridors to predict the avenues of approach and key
                                             areas</h4>
 
-                                        <p>To add</p>
+                                        <p>As we get set of distinct easiest avenues that can be used for troop maneuver, there might be
+                                            some risks in using the paths due to enemy locations.
+                                            So in this milestone wedeveloped an algorithm to define the range of threats for
+                                            the enemy locations annotatedby user and then use that range of threats to find
+                                            threat for routes generated.The general approach to get a range of threat was,
+                                            the threat decreasing a uniformamount when going away from the enemy location or building.
+                                            So as we can definebuildings as enemy ones in our tool, the value must start decreasing from
+                                            the wall ofthe building to outside. As our representation of terrain was using a grid of cells,
+                                            wedefined two 2d arrays of the shape of terrain grid called Enemy threat grid and Threat</p>
+
+                                        <p>
+                                            decrement grid. In here Threat decrement grid has a value for each cell defining how much threat will loss in this cell. The amount is the loss of threat per grid cell unit.Using that we created the enemy threat grid that will finally have a value of threat foreach cell in the terrain. The value is between 0 and 10.In here, what would decrease threat was only distance from the enemy building. Sothe threat decrement grid has uniform values. So the threat range that is resulted is a circular area around the building where threat last only to a maximum fixed distance from borders of the building.When a same cell in threat array get values from two threat locations, the maximum out of the threats at the cell due to all threat locations is kept.So the rasterized image of threat variation from an enemy building is as Following figure when only distance is considered.
+                                        </p>
+                                        <p align="center">
+                                            <img src="img/blog/ipb/28.png" alt="" width="80%">
+                                        </p>
+
+                                        <p>
+                                            Following figure is the flow of the code we developed to get threat grid
+                                        </p>
+
+                                        <p align="center">
+                                            <img src="img/blog/ipb/29.png" alt="" width="80%">
+                                        </p>
+
+                                        <p>
+                                            So the pseudo-code of the algorithm used to get the threat grid from a building whengiven the border_cell_list, which is the list of cells in the buildings border of it is given below
+                                        </p>
+
+                                        <pre class="code">
+
+                                        </pre>
+
+                                        <p>To Add</p>
+
                                         <!--add here-->
 
                                     </div>

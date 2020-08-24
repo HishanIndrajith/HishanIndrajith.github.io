@@ -83,3 +83,5 @@ E
 internship.html,5\0\50021bf6378d38098f4da234e5837c069279db59
 <
 css/blog.css,5\f\5fb4713212cd530d35109d17364632802595ab18
+U
+%vendor/jquery-easing/jquery.easing.js,3\2\3231a2c0e85f4ae8da414f5712755c245c61d3cd
