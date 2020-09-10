@@ -1,41 +1,41 @@
 
-t Web:TableHeaderHasIdOrScopeCheckš	";Add either an 'id' or a 'scope' attribute to this <th> tag.(£ÄÊšûÿÿÿÿ8ÖÍê¦».
-PWeb:BoldAndItalicTagsCheckë	"Replace this <i> tag by <em>.(Ñ¤Èíøÿÿÿÿ8ÖÍê¦».
-KWeb:BoldAndItalicTagsCheckò	"Replace this <i> tag by <em>.(œÓìû8ÖÍê¦».
-E	Web:S1827Ò")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-E	Web:S1827Ç	")Remove this deprecated "align" attribute.(™×h8Â¶ÿ».
-E	Web:S1827ú")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-OWeb:BoldAndItalicTagsCheckV"Replace this <i> tag by <em>.(èîüûÿÿÿÿ8ÖÍê¦».
-KWeb:BoldAndItalicTagsCheckî	"Replace this <i> tag by <em>.(Ì£­„8ÖÍê¦».
-t Web:TableHeaderHasIdOrScopeCheckš	";Add either an 'id' or a 'scope' attribute to this <th> tag.(£ÄÊšûÿÿÿÿ8ÖÍê¦».
-t Web:TableHeaderHasIdOrScopeCheckš	";Add either an 'id' or a 'scope' attribute to this <th> tag.(£ÄÊšûÿÿÿÿ8ÖÍê¦».
-E	Web:S1827Í")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-‘	Web:S5148ë	"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(Ñ¤Èíøÿÿÿÿ8ÖÍê¦».
-TWeb:ImgWithoutAltCheck¢"%Add an "alt" attribute to this image.(¯„ºúÿÿÿÿ8ÖÍê¦».
-E	Web:S1827¡")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-PWeb:BoldAndItalicTagsChecké	"Replace this <i> tag by <em>.(ıô–òşÿÿÿÿ8ÖÍê¦».
-E	Web:S1827è")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-‘	Web:S5148ğ	"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(û‰áÀÿÿÿÿÿ8ÖÍê¦».
-E	Web:S1827…	")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-E	Web:S1827Ş")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-E	Web:S1827ö")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-E	Web:S1827ÿ")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-PWeb:BoldAndItalicTagsCheckç	"Replace this <i> tag by <em>.(´ş„úúÿÿÿÿ8ÖÍê¦».
-PWeb:BoldAndItalicTagsCheckğ	"Replace this <i> tag by <em>.(û‰áÀÿÿÿÿÿ8ÖÍê¦».
-E	Web:S1827€")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-Œ	Web:S5148ò	"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(œÓìû8ÖÍê¦».
-E	Web:S1827º")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-E	Web:S1827Ì")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-E	Web:S1827ª")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-E	Web:S1827†")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-PWeb:TableWithoutCaptionCheck—	" Add a description to this table.(°à•á8ÖÍê¦».
-E	Web:S1827»")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-‘	Web:S5148é	"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(ıô–òşÿÿÿÿ8ÖÍê¦».
-Œ	Web:S5148î	"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(Ì£­„8ÖÍê¦».
-E	Web:S1827®")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-E	Web:S1827è")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-E	Web:S1827	")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
-E	Web:S1827¿	")Remove this deprecated "align" attribute.(™×h8ÓË§ÿ».
-‘	Web:S5148ç	"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(´ş„úúÿÿÿÿ8ÖÍê¦».
-OWeb:BoldAndItalicTagsCheck2"Replace this <i> tag by <em>.(¨£¸øÿÿÿÿ8ÖÍê¦».
-E	Web:S1827À")Remove this deprecated "align" attribute.(™×h8ÖÍê¦».
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+q Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(£ÄÊšûÿÿÿÿ8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+	Web:S5148"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(Ñ¤Èíøÿÿÿÿ8òøåÂ.
+HWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(Ì£­„8òøåÂ.
+q Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(£ÄÊšûÿÿÿÿ8òøåÂ.
+HWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(œÓìû8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+MWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(èîüûÿÿÿÿ8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+MWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(¨£¸øÿÿÿÿ8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+MWeb:TableWithoutCaptionCheck" Add a description to this table.(°à•á8òøåÂ.
+	Web:S5148"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(´ş„úúÿÿÿÿ8òøåÂ.
+MWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(´ş„úúÿÿÿÿ8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+‰	Web:S5148"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(Ì£­„8òøåÂ.
+	Web:S5148"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(û‰áÀÿÿÿÿÿ8òøåÂ.
+	Web:S5148"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(ıô–òşÿÿÿÿ8òøåÂ.
+MWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(ıô–òşÿÿÿÿ8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+MWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(û‰áÀÿÿÿÿÿ8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+‰	Web:S5148"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(œÓìû8òøåÂ.
+QWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(¯„ºúÿÿÿÿ8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+q Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(£ÄÊšûÿÿÿÿ8òøåÂ.
+MWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(Ñ¤Èíøÿÿÿÿ8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
+B	Web:S1827")Remove this deprecated "align" attribute.(™×h8òøåÂ.
