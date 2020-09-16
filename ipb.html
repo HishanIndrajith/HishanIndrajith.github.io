@@ -1234,13 +1234,293 @@ function scan(restricted_grid, cell, directions, is_diagonal):
                                         </p>
 
                                         <pre class="code">
-
+function threat_grid(border_cell_list, threat_decrement_array)
+  define starting threat for this building as T
+  create new grid threat_range
+  for each cell in border_cell_list:
+  visited = new grid to store whether the cell visited or not
+  q = new queue to store scanned cells with threat
+  add cell to the q with threat T
+  mark threat of cell in threat_range as T
+  while q is not empty:
+      current_cell = get cell with maximum threat cell from q
+      remove current_cell from q
+      mark current_cell as visited in visited
+	  let d is current_cell_threat_decrement
+      d = threat_decrement_array_cell[current_cell]
+      threat = threat_range[current_cell]
+      for each unvisited neighbor cell of current_cell:
+		let n is neighbor_cell_decrement
+        n = threat_decrement_array_cell[neighbor]
+        if neighbor is in diagonal direction:
+          threat_decrement = square_root(2) * (d + n) /2
+        else
+          threat_decrement = d + n) /2
+        neighbor_cell_threat = threat - threat_decrement
+        if neighbor_cell_threat > threat_range[neighbor]:
+          update threat_range with neighbor_cell_threat
+          add neighbor to q
+  return threat_range
                                         </pre>
 
-                                        <p>To Add</p>
+                                        <p>
+                                            Then we studied how the terrain features would effect the threat and how to introduce those effects to our automated tool. From the features we have for terrain grid we identified following features would effect threat range of an enemy building.
+                                        </p>
 
-                                        <!--add here-->
+                                        <ul>
+                                            <li class="level1">
+                                                <div class="li"> Enemy building height </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> Height of surrounding buildings</div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> Level of vegetation </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> High elevation than enemy building height in surround area</div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> Low elevation than enemy building ground
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            So to add enemy building height to the code functionality we defined the starting threat T of the algorithm according to the enemy building height. As the threats will be mapped to range between 10 and 0 at the end, increasing starting threat at enemy building is not an issue.
+                                        </p>
+                                        <p>
+                                            The best way to add the effect of surrounding features to the threat grid, we automatically change the Threat_decrement_array according to the features. As example, in the cells where there is a building, the threat decrement will be higher than normal cell.
+                                        </p>
+                                        <p>
+                                            So we defined following attributes that affect threat decrement array and assingned some sample values for them and fine tuned the variables until a good result come.
+                                        </p>
+                                        <p>
+                                            In a normal flat terrain with no features like building or vegetation given, threat from 1 storied enemy building decrease uniformly up to 100m from border of the building.
 
+                                            So the average width of a cell in our grid is approximately 3m, So the range is about 33 units.
+                                        </p>
+
+                                        <ul>
+                                            <li class="level1">
+                                                <div class="li"> threat_decrement_building_max, this is the threat decrement at places where a building blocks visibility, normally it is a building with same number of stories or more than the enemy building. </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> threat_decrement_grassland, this is the threat decrement at places where there is a grassland</div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li">threat_decrement_shrubland, this is the threat decrement at places where there is a shrubland </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> threat_decrement_medium_forest, this is the threat decrement at places where there is a medium_forest</div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> threat_decrement_high_forest, this is the threat decrement at places where there is a high_forest</div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> threat_decrement_elevation_increment, this is the value which the available threat decrement increase when the elevation is higher than the estimated building height</div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> threat_decrement_elevation_decrement , this is the value which the available threat decrement decrease when the elevation is lower than the enemy ground level.</div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> building_floor_height_average, this is the multiplying factor to get estimated building height from the number of stories of it.
+                                                </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li"> range_increment_per_floor, normally range of the single storied building is 33 units, but it increase when the number of stories of enemy building increase. This is the value in which the range increase per single storey.
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            following Figures are images of the threat array generated in enemy buildings by changing the terrain features.
+                                        </p>
+                                        <p align="center">
+                                            <img src="img/blog/ipb/30.png" alt="" width="100%">
+                                        </p>
+                                        <em>When all buildings are single floor(LEFT), when top enemy building was made two story (MIDDLE) , when a close building of it also made two story (RIGHT)
+                                        </em>
+                                        <p>
+                                            When all buildings are two story, the threat range of enemy building is blocked by surrounding buildings as in first image. So when the enemy building is made a two stroy one, it's range of threat doesn't blocked by single floored buildings around. that is why the range has not changed in middle image. So when a nearby surround building also made two story as in right image, the range of enemy building will get effected from that.
+                                        </p>
+                                        <p>
+                                            Below figure shows the variation of threat with elevation right side of the building, the elevation is high, it is higher than the height of the building, so the threat from building has been limited to right side. Also to left of the building, you can see there is an increase of threat. that is because the ground level to that side is lower than building ground level as well as the vegetation is grassland, that cause more spread of threat towards that side.
+                                        </p>
+                                        <p align="center">
+                                        <img src="img/blog/ipb/31.png" alt="" width="60%">
+                                    </p>
+                                        <em> Variation of threat with elevation
+                                        </em>
+
+                                        <p>
+                                            Basically vegetation level effect threat range, in below figure to left side of the building, there is a heavy density forest, so the threat have been limited towards that side.
+                                        </p>
+                                        <p align="center">
+                                            <img src="img/blog/ipb/32.png" alt="" width="60%">
+                                        </p>
+                                        <em>
+                                            Variation of threat with vegetation
+                                        </em>
+                                        <p>
+                                            Finally obtaining the threat grid for the whole battlefield, we decided threats for the routes generated between given coordinates. So the paths were colored in IPB tool using the threats obtained for each routes as below. In the threat representation of the map, the colors change from green to red to represent threat from 0 to 10 respectively.
+                                        </p>
+
+                                        <p>
+                                            Below is an image from IPB tool when potential mobility corridors were generated and paths are colored according to threat level due to the enemy locations marked in red.
+                                        </p>
+                                        <p align="center">
+                                            <img src="img/blog/ipb/33.jpeg" alt="" width="100%">
+                                        </p>
+                                        <br>
+
+                                        <h3>Comparison with Available Systems</h3>
+                                        <br>
+                                        <h6>Google map directions</h6>
+
+                                        <p>
+                                            Basically the platform normally used to find paths to travel from one place to another place is Google Map directions.
+                                            Following figure shows the comparison of the avenues of approaches generated between two positions separated by a river and the Google direction result for those two positions.
+                                        </p>
+
+                                        <p align="center">
+                                            <img src="img/blog/ipb/34.jpeg" alt="" width="100%">
+                                        </p>
+                                        <em>
+                                            Comparison with Google direction, Our System generated paths (LEFT) Google Directions for vehicles(MIDDLE) and Google directions for walking(RIGHT)
+                                        </em>
+
+                                        <p>
+                                            Basically direction API consider only available routes to generate the paths. Some times they give multiple paths possible but not to much deep level. So it doesn't consider the terrain features or any additional information we give on terrain in generation paths. Also it does not suggest paths to maneuver through non road areas. So in case of avenues of approaches our implementation is much successful towards obtaining avenues of approaches for troop maneuver.
+                                        </p>
+
+                                        <br>
+                                        <h6>
+                                            Comparison with result from a related works
+                                        </h6>
+                                        <p>
+                                            In [3] the researchers have developed algorithms to generate avenues of approaches for a small map using a trafficability array and generalized voronoi diagram. Also they have evaluated the avenues of approaches of that map by an subject matter experts (SME). So we recreated the map they have used in the research drawing similar terrain data.Then obtained avenues of approaches for the two locations they have used and then compared it with the result generated by their system and manual result by SME.
+                                        </p>
+
+                                        <p>
+                                            Following figure shows the avenues of approaches for that map given by algorithms used by the researchers and the SME.
+                                        </p>
+
+                                        <p align="center">
+                                            <img src="img/blog/ipb/35.png" alt="" width="100%">
+                                        </p>
+                                        <em>
+                                            Avenues of approaches by researcher's algorithms (LEFT) and subject matter expert(RIGHT), (C. Grindle, M. Lewis, R. Glinton, J. Giampapa, and K. Owens 2004, Fig. 5 and 6, p. 4)
+                                        </em>
+
+                                        <p>
+                                            Then following figure shows the our IPB tool generated avenues of approaches for the same map created by us on our tool.
+                                        </p>
+                                        <p align="center">
+                                            <img src="img/blog/ipb/36.png" alt="" width="100%">
+                                        </p>
+
+                                        <em>
+                                            Avenues of approaches by our IPB tool
+                                        </em>
+
+                                        <p>
+                                            So the avenues of approaches generated by our tool seems much similar to the avenues drawn by subject matter experts in the given research. There are basic three avenues suggested by the SME as well as our system. In the referenced research's output, only two avenues are suggested. Also our result contain risk estimation values for the avenues as well if enemy locations were annotated.
+                                        </p>
+                                        <p>
+                                            Also the algorithm used by the referenced research is based on a voronoi diagram method. So that approach is giving a complex scenario when comes to larger maps as well as much time as concluded in \autoref{f:label27}. So for larger maps with more details like buildings, water bodies the voronoi diagram become complex and give very high number of paths. So removing unwanted paths is difficult. So for each larger and smaller maps with any amount of features the approach taken by our algorithms is good.
+                                        </p>
+
+                                        <br>
+                                        <h3>Conclusions and Future Works</h3>
+                                        <br>
+
+                                        <p>
+                                            Building a tool for battlefield area evaluation, storing and visualizing information, and supporting decision making for troop maneuver planning is the primary objective of this project. In the IPB process also the objective is to build the combined obstacle overlay to use for troop locating and maneuver planning. Avenues of approach, Engagement areas, Defensible terrain are some final high level information obtained through the combined obstacle overlay. In this research we could develop algorithms and the tool to generate and display avenues of approach successfully.
+                                        </p>
+                                        <p>
+                                            we looked at the low level environmental factors such as ground, and environment data. We developed a database of predefined terrain features data like building, elevation, vegetation, water and roads for any location. In this project we just included data for only Sri Lanka. So any default terrain data for a battlefield are automatically obtained by the tool. Then we build a mechanism to display in on the map as overlays. Also implemented method to put user defined features to overlays. We could developed a backend to store, edit and give the battlefield data separately. Using a REST API, we connected the backend with frontend IPB tool to enable operations on overlays.
+                                        </p>
+                                        <p>
+                                            We obtained trafficability grid using a grid based model for processing overlay data. In the decision support development part we explored three different approaches to use trafficbilty grid to generate avenues of approach, which was a main requirement in IPB process. Finally we compared and further developed the best and more practical approach from those three. we finally developed the algorithms for the avenues of approach generation. Then We developed algorithms to find threat level for paths due to enemy. Finally we compared our output avenues with available paths generating platforms like Google maps and the avenues suggested by subject matter experts in related researches.
+                                        </p>
+                                        <p>
+                                            As planned in milestones we implemented only avenues of approaches finding using trafficability grid. So there are few other high-level terrain information such as key terrain, defensible terrain and engagement areas. So as a future work those goals must be accomplished.
+                                        </p>
+                                        <p>
+                                            Also there are few other terrain information that need to be fused with terrain data like weather and soil type. So we couldn't combine those data due to lack of those data. If those data also got fused, the we could obtain more accurate results. So that need to be done as a future target.
+
+                                        </p>
+                                        <p>
+                                            Also when considering the threat from enemy we developed the algorithm to change the enemy range of threat according to elevation, vegetation, surrounding buildings and height of enemy building. So in future works, enemy must be more customized like several types of enemy like snipers, normal ones, scouts so on. Then that type also will effect the enemy range.
+
+                                        </p>
+                                        <p>
+                                            Also currently we are obtaining the threat from enemy to the avenues. so in future version when there is a considerable high threat from a enemy location to a path, that path should be minimized to avoid that threat making a new path.
+                                        </p>
+
+                                        <br>
+                                        <h3>References</h3>
+                                        <br>
+
+                                        <ul>
+                                            <li class="level1">
+                                                <div class="li">
+                                                    P.Skalický and T.Palasiewicz, “Intelligence preparation of the battlefield as a partof knowledge development,” 2017
+                                                </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li">
+                                                    R. Glinton, S. Owens, J. Giampapa, K. Sycara, C. Grindle, and M. Lewis, “Terrain-based information fusion and inference,”Proc. Seventh Int. Conf. Inf. Fusion,FUSION 2004, vol. 1, pp. 338–345, 2004
+                                                </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li">
+                                                    C. Grindle, M. Lewis, R. Glinton, J. Giampapa, and K. Owens, Sean Sycara, “Au-tomating Terrain Analysis: Algorithms for Intelligence Preparation of the Battlefield,”Proceedings of the Human Factors and Ergonomics Society Annual Meeting, vol. 48,no. 3, pp. 533–537, 2004
+                                                </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li">
+                                                    C. J. James Donlon and K. D. Forbus, “Using a Geographic Information System forQualitative Spatial Reasoning about Trafficability,”Proc. QR99, pp. 1–11, 1999
+                                                </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li">
+                                                    K. K. Rowel and H. Ranasinghe, “Impact of gis modelling in military operationalplanning..”
+                                                </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li">
+                                                    E. D. Porter, “An overview of the army gis research program,” 1987
+                                                </div>
+                                            </li>
+
+                                            <li class="level1">
+                                                <div class="li">
+                                                    W. Headquarters, Department of the Army, “Terrain analysis,”Encyclopedia ofGeographic Information Science, 1990.
+                                                </div>
+                                            </li>
+
+                                            <li class="level1">
+                                                <div class="li">
+                                                    M. C. A. Agee, “INTELLIGENCE PREPARATION OF THE BATTLEFIELD(IPB),”Society, vol. 1387, no. 22, pp. 1383–1387, 1987
+                                                </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li">
+                                                    U. W. Mark Meeder, Tobias Aebi, “The influence of slope on walking activity andthe pedestrian modal share,”20th EURO Working Group on Transportation Meeting,2017.
+                                                </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li">
+                                                    D. E. Sidran, “TIGER: AN UNSUPERVISED MACHINE LEARNING TACTICALINFERENCE GENERATOR,” 2009
+                                                </div>
+                                            </li>
+                                            <li class="level1">
+                                                <div class="li">
+                                                    P. Svenson and H. Sidenbladh, “Determining possible avenues of approach usingANT,” 2003.
+                                                </div>
+                                            </li>
+
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
