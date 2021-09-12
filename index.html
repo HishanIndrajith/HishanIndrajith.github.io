@@ -27,9 +27,9 @@
 </head>
 
 <body id="page-top" class="is-preload">
-
+  <div id="spinner" class="lds-circle"><div></div></div>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top loaded" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Hishan</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@
   </nav>
 
   <!-- Header -->
-  <header class="masthead" id="wrapper">
+  <header class="masthead loaded" id="wrapper">
     <div id="bg"></div>
     <div id="overlay"></div>
     <!-- particles.js container -->
@@ -86,7 +86,7 @@
               </ul>
             </nav>
             <br>
-            <a href="#about" class="btn btn-primary js-scroll-trigger">Get Inside<i class="fas fa-arrow-down"></i></a>
+            <a href="#about" class="btn btn-primary js-scroll-trigger">See More <i class="fas fa-arrow-down"></i></a>
           </header>
         </div>
 
@@ -95,7 +95,7 @@
   </header>
 
   <!-- About Section -->
-  <section id="about" class="about-section text-center">
+  <section id="about" class="about-section text-center loaded">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
@@ -111,7 +111,7 @@
   </section>
 
   <!--/ Section experience/-->
-  <div id="experience">
+  <div id="experience" class="loaded">
       <div class="testimonials paralax-mf bg-image" style="background-image: url(img/bg-codegen.jpg)">
           <div class="overlay-mf"></div>
           <div class="container">
@@ -139,7 +139,7 @@
 
 
   <!--/ Section Education/-->
-  <div id="education">
+  <div id="education" class="loaded">
     <div  class="testimonials paralax-mf bg-image" style="background-image: url(img/bg-efac.jpg)">
       <div class="overlay-mf"></div>
       <div class="container">
@@ -186,7 +186,7 @@
   </div>
 
   <!-- start section courses learnt -->
-  <div id="services">
+  <div id="services" class="loaded">
     <div class="container">
 
       <div class="services-carousel owl-theme">
@@ -266,7 +266,7 @@
   <!--==========================
       Portfolio Section
     ============================-->
-  <section id="portfolio"  class="section-bg paralax-mf bg-image" style="background-image: url(img/bg-projects.jpg)" >
+  <section id="portfolio"  class="section-bg paralax-mf bg-image loaded" style="background-image: url(img/bg-projects.jpg)" >
     <div class="overlay-mf"></div>
     <div class="container">
       <div class="row">
@@ -413,7 +413,7 @@
   </section><!-- #portfolio -->
 
   <!-- start section journal -->
-  <div id="journal" class="text-center paddsection">
+  <div id="journal" class="text-center paddsection loaded">
 
     <div class="container">
       <i class="fas fa-video fa-2x mb-2 text-white"></i>
@@ -526,7 +526,7 @@
   <!-- End section journal -->
 
   <!-- Contact Section -->
-  <section id="contact" class="contact-section bg-black">
+  <section id="contact" class="contact-section bg-black loaded">
     <div class="container">
 
       <div class="row">
@@ -585,16 +585,16 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black small text-center text-white-50">
+  <footer class="bg-black small text-center text-white-50 loaded">
     <div class="container">
       Copyright &copy; Hishan Indrajith 2020
     </div>
   </footer>
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up loaded"></i></a>
 
   <script>
-      window.onload = function() { document.body.classList.remove('is-preload'); window.scrollTo(0,0);}
+      window.onload = function() { document.body.classList.remove('is-preload'); document.getElementById("spinner").remove(); window.scrollTo(0,0);}
       window.ontouchmove = function() { return false; }
       window.onorientationchange = function() { document.body.scrollTop = 0; }
   </script>
@@ -615,9 +615,9 @@
   <script src="js/grayscale.js"></script>
 
   <!--vanta js globe animation background-->
-  <script src="js/three.r92.min.js"></script>
-  <script src="js/vanta.globe.min.js"></script>
-  <script> VANTA.GLOBE({ el: "#about", backgroundColor: 0x90313 }) </script>
+  <!-- <script src="js/three.r92.min.js"></script>
+  <script src="js/vanta.globe.min.js"></script> -->
+  <!-- <script> VANTA.GLOBE({ el: "#about", backgroundColor: 0x90313 }) </script> -->
 
   <!--particle js scripts -->
   <script src="vendor/particles.js/particles.js"></script>

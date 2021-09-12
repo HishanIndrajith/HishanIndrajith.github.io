@@ -470,7 +470,7 @@ body, input, select, textarea {
     height: 100vh;
     min-height: 35rem;
     padding: 15rem 0;
-    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/bg.jpg");
+    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/bg.jpeg");
     background-position: center;
     background-repeat: repeat-x;
     background-attachment: scroll;
@@ -551,7 +551,7 @@ body, input, select, textarea {
 .about-section {
     padding-top: 4rem;
     padding-bottom: 4rem;
-    background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+    background: #161616;
 }
 
 .about-section p {
@@ -746,20 +746,24 @@ footer {
     width: 100%;
 }
 
+html{
+    scrollbar-width: none;
+}
+
 body {
     background: #fff;
     overflow-x: hidden;
+    scrollbar-width: none;
 }
 
-body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-    -moz-animation: none !important;
-    -webkit-animation: none !important;
-    -ms-animation: none !important;
-    animation: none !important;
-    -moz-transition: none !important;
-    -webkit-transition: none !important;
-    -ms-transition: none !important;
-    transition: none !important;
+body.is-preload{
+    background: rgb(62,62,62);
+    background: linear-gradient(315deg, rgba(62,62,62,1) 0%, rgba(0,0,0,1) 100%);
+    position: fixed;
+}
+
+body.is-preload .loaded{
+    visibility: hidden;
 }
 
 /* Main */
@@ -1833,7 +1837,7 @@ journal image hover code
 
 /*body animation*/
 
-body {
+/* body {
     -moz-animation: body 1s 2s forwards;
     -webkit-animation: body 1s 2s forwards;
     -ms-animation: body 1s 2s forwards;
@@ -1892,4 +1896,51 @@ body {
         overflow-y: visible;
         opacity: 1;
     }
+} */
+
+
+/* pre loader spinner */
+
+.lds-circle {
+    display: inline-block;
+    transform: translateZ(1px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -62px;
+    margin-left: -62px;
+    width: 124px;
+    height: 124px;
+  }
+  .lds-circle > div {
+    display: inline-block;
+    width: 124px;
+    height: 124px;
+    margin: 8px;
+    border-radius: 50%;
+    background: #fff;
+    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  @keyframes lds-circle {
+    0%, 100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+      transform: rotateY(3600deg);
+    }
+  }
+
+body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
 }
