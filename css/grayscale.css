@@ -1916,10 +1916,13 @@ journal image hover code
     display: inline-block;
     width: 124px;
     height: 124px;
-    margin: 8px;
     border-radius: 50%;
     background: #fff;
-    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    color: black;
+  	font:7em sans-serif;
+    font-family: 'Times New Roman', serif;
+  	text-align: center;
+    animation: lds-circle 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
   }
   @keyframes lds-circle {
     0%, 100% {
