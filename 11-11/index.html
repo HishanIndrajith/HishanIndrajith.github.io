@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Ensures the page scales nicely on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Load a brush-style font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <title>Valentine's Countdown</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      /* Using the brush font */
+      font-family: 'Dancing Script', cursive;
+      background: linear-gradient(to bottom right, #ffe6e6, #ffb3b3);
+      overflow-x: hidden;
+      text-align: center;
+    }
+    #container {
+      padding: 20px;
+    }
+    h1 {
+      color: #d6336c;
+      margin-top: 20px;
+    }
+    #countdown {
+      font-size: 2em;
+      color: #a30000;
+      margin-top: 20px;
+    }
+    /* Celebration Container (hidden until countdown ends) */
+    #celebration {
+      display: none;
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(to top, #ffe6e6, #ffb3b3);
+      overflow: hidden;
+    }
+    /* Floating Emoji Animation */
+    .floating-emoji {
+      position: absolute;
+      bottom: -80px;
+      font-size: 64px;
+      animation: floatEmoji 8s infinite;
+      opacity: 0;
+    }
+    @keyframes floatEmoji {
+      0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-80vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0;
+      }
+    }
+    /* Container for the image with heart emojis */
+    .image-container {
+      margin-top: 40px;
+      font-size: 0; /* Remove inline spacing */
+    }
+    .image-container span {
+      font-size: 64px;
+      vertical-align: middle;
+    }
+    .image-container img {
+      max-width: 80%;
+      height: auto;
+      vertical-align: middle;
+      border: 4px solid red;
+      border-radius: 10px;
+      margin: 0 10px;
+    }
+    /* Romantic Text and Button Styling */
+    .romantic-text {
+      margin-top: 20px;
+    }
+    .romantic-text h2 {
+      color: #d6336c;
+      margin-bottom: 10px;
+    }
+    .romantic-text button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #ffb3b3;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Countdown Container -->
+  <div id="container">
+    <h1>Time Remaining</h1>
+    <div id="countdown"></div>
+  </div>
+
+  <!-- Celebration Container -->
+  <div id="celebration">
+    <!-- Floating Emojis -->
+    <span class="floating-emoji" style="left: 10%; animation-delay: 0s;">❤️</span>
+    <span class="floating-emoji" style="left: 30%; animation-delay: 2s;">🎈</span>
+    <span class="floating-emoji" style="left: 50%; animation-delay: 4s;">🌸</span>
+    <span class="floating-emoji" style="left: 70%; animation-delay: 1s;">❤️</span>
+    <span class="floating-emoji" style="left: 90%; animation-delay: 3s;">🎈</span>
+    <span class="floating-emoji" style="left: 20%; animation-delay: 1s;">🌸</span>
+    <span class="floating-emoji" style="left: 40%; animation-delay: 3s;">💕</span>
+    <span class="floating-emoji" style="left: 60%; animation-delay: 2s;">💖</span>
+    <span class="floating-emoji" style="left: 80%; animation-delay: 4s;">🌸</span>
+
+    <!-- Image Container with Heart Emojis -->
+    <div class="image-container">
+      <span>❤️</span>
+      <img src="11.png" alt="Valentine Image" />
+      <span>❤️</span>
+    </div>
+
+    <!-- Romantic Text and Button -->
+    <div class="romantic-text">
+      <h2>I Love You ... This is for you..</h2>
+      <button onclick="goToPhotoAlbum()">Click Here</button>
+    </div>
+
+  </div>
+
+  <script>
+    // Set target date to February 14, 2025, 8:00 AM
+    const targetDate = new Date("Feb 14, 2025 02:27:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    const celebrationEl = document.getElementById("celebration");
+    const containerEl = document.getElementById("container");
+
+    function goToPhotoAlbum() {
+        window.location.href = "album.html";
+    }
+
+    // Update the countdown every second
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        clearInterval(interval);
+        containerEl.style.display = "none";
+        celebrationEl.style.display = "block";
+      } else {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        countdownEl.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

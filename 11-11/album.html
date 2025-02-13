@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Mobile friendly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine Photo Album</title>
+  <!-- Load a brush-style font for a romantic look -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Basic styling and background */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6e6; /* soft pink background */
+      font-family: 'Dancing Script', cursive;
+      text-align: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+    /* Container for the album content */
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff0f5; /* light, romantic background */
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+    h1 {
+      color: #d6336c;
+      margin-bottom: 20px;
+    }
+    /* Photo container with 3D perspective for flip effect */
+    .photo-container {
+      perspective: 1000px;
+      position: relative;
+    }
+    .album-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transform-style: preserve-3d;
+    }
+    /* Title below the image */
+    #albumTitle {
+      margin: 15px 0;
+      color: #d6336c;
+      font-size: 1.8em;
+    }
+    /* Navigation buttons */
+    .nav-buttons {
+      margin-top: 20px;
+    }
+    .nav-buttons button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      background: #ffb3b3;
+      color: #d6336c;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .nav-buttons button:hover {
+      background: #ff8c8c;
+    }
+    @media (max-width: 600px) {
+      .nav-buttons button {
+        font-size: 1em;
+        padding: 8px 16px;
+      }
+    }
+
+    /* --------------------
+       Page-turn animations
+       -------------------- */
+    /* For Next (forward) */
+    .flip-out {
+      animation: flipOut 0.5s forwards;
+    }
+    @keyframes flipOut {
+      from { transform: perspective(600px) rotateY(0deg); }
+      to { transform: perspective(600px) rotateY(90deg); }
+    }
+    .flip-in {
+      animation: flipIn 0.5s forwards;
+    }
+    @keyframes flipIn {
+      from { transform: perspective(600px) rotateY(-90deg); }
+      to { transform: perspective(600px) rotateY(0deg); }
+    }
+    /* For Previous (reverse) */
+    .flip-out-reverse {
+      animation: flipOutReverse 0.5s forwards;
+    }
+    @keyframes flipOutReverse {
+      from { transform: perspective(600px) rotateY(0deg); }
+      to { transform: perspective(600px) rotateY(-90deg); }
+    }
+    .flip-in-reverse {
+      animation: flipInReverse 0.5s forwards;
+    }
+    @keyframes flipInReverse {
+      from { transform: perspective(600px) rotateY(90deg); }
+      to { transform: perspective(600px) rotateY(0deg); }
+    }
+    /* --------------------
+       Title fade animations
+       -------------------- */
+    .text-fade-out {
+      animation: fadeOut 0.5s forwards;
+    }
+    .text-fade-in {
+      animation: fadeIn 0.5s forwards;
+    }
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* -----------------------------------
+       Floating emojis in the background
+       ----------------------------------- */
+    .emoji-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .floating-emoji {
+      position: absolute;
+      bottom: -100px;
+      font-size: 48px;
+      animation: floatEmoji 10s linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes floatEmoji {
+      0% {
+        transform: translateY(0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating emoji background -->
+  <div class="emoji-background">
+    <span class="floating-emoji" style="left: 10%; animation-delay: 0s;">❤️</span>
+    <span class="floating-emoji" style="left: 30%; animation-delay: 2s;">🌸</span>
+    <span class="floating-emoji" style="left: 50%; animation-delay: 4s;">❤️</span>
+    <span class="floating-emoji" style="left: 70%; animation-delay: 1s;">🌸</span>
+    <span class="floating-emoji" style="left: 20%; animation-delay: 3s;">❤️</span>
+    <span class="floating-emoji" style="left: 80%; animation-delay: 5s;">🌸</span>
+  </div>
+
+  <!-- Main album container -->
+  <div class="container">
+    <h1>💕 Our ❤️ Memories 💕</h1>
+    <div class="photo-container">
+      <img id="albumImage" class="album-img" src="image1.png" alt="Valentine Photo">
+    </div>
+    <h2 id="albumTitle">This is my love 💕</h2>
+    <div class="nav-buttons">
+      <button id="prevBtn">Previous</button>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+
+  <script>
+    // Array of images with associated titles
+    const images = [
+      { src: "image1.png", title: "This is my love 💕" },
+      { src: "image2.png", title: "In OGF 😊🧸" },
+      { src: "image3.png", title: "Galle Face 👩🏻‍❤️‍👨🏻🌊🐚" },
+      { src: "image4.png", title: "Bus travel with you 🚌💖" },
+      { src: "image5.png", title: "Red and Pink 🧸🎀" },
+      { src: "image6.png", title: "Boom Boom -> MBA 🏍️💨" },
+      { src: "image7.png", title: "Forever in Love 💖💗🥰💞" },
+      { src: "image8.png", title: "😘😘😘" }
+      // Add more objects as needed
+    ];
+
+    let currentIndex = 0;
+    let animationInProgress = false;
+
+    const albumImage = document.getElementById("albumImage");
+    const albumTitle = document.getElementById("albumTitle");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    // Function to change the image and title with page-turn animation
+    function changeImage(newIndex, direction) {
+      if (animationInProgress) return;
+      animationInProgress = true;
+
+      // Start title fade-out
+      albumTitle.classList.add("text-fade-out");
+
+      if (direction === "prev") {
+        albumImage.classList.add("flip-out");
+        albumImage.addEventListener("animationend", function handleFlipOut(e) {
+          if (e.animationName === "flipOut") {
+            albumImage.classList.remove("flip-out");
+            // Update image source and title text
+            albumImage.src = images[newIndex].src;
+            albumTitle.textContent = images[newIndex].title;
+            // Force reflow to restart animation
+            void albumImage.offsetWidth;
+            albumImage.classList.add("flip-in");
+            albumTitle.classList.remove("text-fade-out");
+            albumTitle.classList.add("text-fade-in");
+            albumImage.removeEventListener("animationend", handleFlipOut);
+            
+            albumImage.addEventListener("animationend", function handleFlipIn(e) {
+              if (e.animationName === "flipIn") {
+                albumImage.classList.remove("flip-in");
+                albumImage.removeEventListener("animationend", handleFlipIn);
+              }
+            });
+            albumTitle.addEventListener("animationend", function handleTextFadeIn(e) {
+              if (e.animationName === "fadeIn") {
+                albumTitle.classList.remove("text-fade-in");
+                albumTitle.removeEventListener("animationend", handleTextFadeIn);
+                animationInProgress = false;
+              }
+            });
+          }
+        });
+      } else if (direction === "next") {
+        albumImage.classList.add("flip-out-reverse");
+        albumImage.addEventListener("animationend", function handleFlipOutReverse(e) {
+          if (e.animationName === "flipOutReverse") {
+            albumImage.classList.remove("flip-out-reverse");
+            // Update image source and title text
+            albumImage.src = images[newIndex].src;
+            albumTitle.textContent = images[newIndex].title;
+            // Force reflow
+            void albumImage.offsetWidth;
+            albumImage.classList.add("flip-in-reverse");
+            albumTitle.classList.remove("text-fade-out");
+            albumTitle.classList.add("text-fade-in");
+            albumImage.removeEventListener("animationend", handleFlipOutReverse);
+            
+            albumImage.addEventListener("animationend", function handleFlipInReverse(e) {
+              if (e.animationName === "flipInReverse") {
+                albumImage.classList.remove("flip-in-reverse");
+                albumImage.removeEventListener("animationend", handleFlipInReverse);
+              }
+            });
+            albumTitle.addEventListener("animationend", function handleTextFadeIn(e) {
+              if (e.animationName === "fadeIn") {
+                albumTitle.classList.remove("text-fade-in");
+                albumTitle.removeEventListener("animationend", handleTextFadeIn);
+                animationInProgress = false;
+              }
+            });
+          }
+        });
+      }
+    }
+
+    // Next button: go to next image using forward animation
+    nextBtn.addEventListener("click", () => {
+      const newIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+      currentIndex = newIndex;
+      changeImage(newIndex, "next");
+    });
+
+    // Previous button: go to previous image using reverse animation
+    prevBtn.addEventListener("click", () => {
+      const newIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+      currentIndex = newIndex;
+      changeImage(newIndex, "prev");
+    });
+  </script>
+</body>
+</html>
